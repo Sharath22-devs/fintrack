@@ -1,0 +1,3 @@
+import {getDatabase} from '../../api/database.mjs';
+export default async (_request,context)=>{const event=await _request.json().catch(()=>null);if(!event?.next_run||Number.isNaN(Date.parse(event.next_run)))return new Response('Expected a scheduled invocation',{status:400});const db=getDatabase();await db.run('DELETE FROM sessions WHERE expires_at<?',[new Date().toISOString()]);await db.run('DELETE FROM resets WHERE expires_at<?',[new Date().toISOString()]);await db.run('DELETE FROM rate_limits WHERE window_start<?',[Math.floor(Date.now()/60000)-1440]);return new Response('Expired authentication and rate-limit state removed.');};
+export const config={schedule:'0 3 * * *'};

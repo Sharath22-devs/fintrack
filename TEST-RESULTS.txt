@@ -1,0 +1,31 @@
+FINTRACK Netlify edition 2.0 — validation summary
+
+Validated locally on 2026-10-07, Node 24.14.1 / Linux.
+Deployment configuration selects Node 22; source supports Node 22+.
+
+Automated checks: 60 passed, 0 failed.
+Engine: actual PostgreSQL-compatible PGlite execution, not mocked financial SQL.
+Includes: accounting invariants, partial settlement, transfer neutrality,
+reconciliation, reversal, monthly protection, tenant isolation, CSRF,
+sessions/reset, durable throttling, attachments, recurrence, goals, imports,
+backup restoration, snapshot consistency and serverless routing.
+
+Native function packaging: Netlify official zip-it-and-ship-it successfully
+bundled api and maintenance; PDF font assets included.
+Production dependency npm audit: 0 known vulnerabilities at check time.
+
+Browser checks: 15 desktop modules and 4 mobile modules, no JavaScript/API
+errors and no document horizontal overflow. Confirmed a parsed expense posts
+a real journal and updates available balance by the recorded amount.
+Additional registration, review, import/backup and audit states inspected.
+Desktop/mobile forms, menus, light and dark theme screenshots reviewed.
+
+Reports: real monthly Excel/PDF exported from the final PostgreSQL handler.
+Excel date cells are typed dates; current-month filtering verified (9 seeded
+records). Available 3,839; receivables 56,633; payables 25,000; net 35,472 INR.
+PDF rendered and inspected, single-page monthly report with tabular records.
+
+Not yet verified: deployment in a real Netlify account, a hosted PostgreSQL
+provider, real reset-email delivery, or external generative-AI responses.
+Those checks require the operator's accounts and credentials.
+This is not an independent security audit or a regulatory certification.
